@@ -18,7 +18,7 @@ public interface MovieService {
     Movie updateRating(long id, double rating);
     Movie updateThougts(long id, String thoughts);
     Boolean delete(long id); 
-    Collection<Movie> createBulk(Collection<Movie> movies);
-    Boolean deleteBulk(Collection<Long> ids);
+    // Collection<Movie> createBulk(Collection<Movie> movies);
+    // Boolean deleteBulk(Collection<Long> ids);
 
 }
