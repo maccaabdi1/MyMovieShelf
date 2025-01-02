@@ -1,6 +1,7 @@
 package com.example.Movie.model;
 
 import java.time.LocalDateTime;
+import java.util.Map;
 
 import org.springframework.http.HttpStatus;
 
@@ -21,9 +22,11 @@ import lombok.experimental.SuperBuilder;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 
 public class Response {
+
     protected String message;
     protected HttpStatus status;
     protected LocalDateTime timestamp;
+    protected Map<?, ?> data;
 
 
     public String getMessage() {
@@ -48,6 +51,9 @@ public class Response {
 
     public void setTimestamp(LocalDateTime timestamp) {
         this.timestamp = timestamp;
+    }
+    public Map<?, ?> getData() {
+        return data;
     }
     
 }

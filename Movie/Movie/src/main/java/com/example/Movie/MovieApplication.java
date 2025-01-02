@@ -16,13 +16,13 @@ public class MovieApplication {
 		SpringApplication.run(MovieApplication.class, args);
 	}
 
-	@Bean
-	CommandLineRunner run(MovieRepo movieRepo) {
-		return args -> {
-			movieRepo.save(new Movie(null, "The Matrix", LocalDate.of(1999, 3, 31), "Action", 9, "Keanu Reeves is one of my favorite actors"));
-			movieRepo.save(new Movie(null, "The Matrix Reloaded", LocalDate.of(2003, 5, 15), "Action", 8, "Keanu Reeves is one of my favorite actors"));
-		};
-	}
+	// @Bean
+	// CommandLineRunner run(MovieRepo movieRepo) {
+	// 	return args -> {
+	// 		movieRepo.save(new Movie(null, "The Matrix", LocalDate.of(1999, 3, 31), "Action", 9, "Keanu Reeves is one of my favorite actors"));
+	// 		movieRepo.save(new Movie(null, "The Matrix Reloaded", LocalDate.of(2003, 5, 15), "Action", 8, "Keanu Reeves is one of my favorite actors"));
+	// 	};
+	// }
 	}
 
 
