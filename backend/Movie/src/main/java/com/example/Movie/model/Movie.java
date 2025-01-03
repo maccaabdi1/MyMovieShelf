@@ -30,12 +30,12 @@ public class Movie {
     @NotEmpty(message = "Title is required")
     private String title;
     
-    private LocalDate releaseDate;
+
     
     private String genre;
     
-    @Min(0) @Max(10)
-    private double rating;
+    @Min(1) @Max(5)
+    private int rating;
     
     @Column(length = 1000)
     private String thoughts;
@@ -57,14 +57,6 @@ public class Movie {
         this.title = title;
     }
 
-    public LocalDate getReleaseDate() {
-        return releaseDate;
-    }
-
-    public void setReleaseDate(LocalDate releaseDate) {
-        this.releaseDate = releaseDate;
-    }
-
     public String getGenre() {
         return genre;
     }
@@ -73,11 +65,11 @@ public class Movie {
         this.genre = genre;
     }
 
-    public double getRating() {
+    public int getRating() {
         return rating;
     }
 
-    public void setRating(double rating) {
+    public void setRating(int rating) {
         this.rating = rating;
     }
 

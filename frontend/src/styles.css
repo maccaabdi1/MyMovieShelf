@@ -1,0 +1,33 @@
+
+body {
+    background-color: #342f2d; 
+    color: #f0f0f0; 
+  }
+  
+  .logo {
+    font-family: 'Rasputin', serif;
+    color: #ffffff; 
+    font-size: 1.5em; 
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5); 
+    margin: 40px; 
+  }
+  .movie-container {
+    background-color: #e4ded7;
+    padding: 20px;
+    border-radius: 10px;
+    width: 1500px; 
+    height: 1000px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 auto; 
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 1);
+  }
+
+
+.parent-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+}

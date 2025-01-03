@@ -32,7 +32,7 @@ public class MovieController {
 
     
     @GetMapping("/list")
-    public ResponseEntity<Response> listMovies() {
+    public ResponseEntity<Response> getAllMovies() {
         return ResponseEntity.ok(
             Response.builder()
                 .message("Movies retrieved successfully")
