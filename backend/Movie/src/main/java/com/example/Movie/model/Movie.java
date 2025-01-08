@@ -33,6 +33,8 @@ public class Movie {
 
     
     private String genre;
+
+    private LocalDate releaseDate;
     
     @Min(1) @Max(5)
     private int rating;
@@ -80,4 +82,10 @@ public class Movie {
     public void setThoughts(String thoughts) {
         this.thoughts = thoughts;
     }
+    public LocalDate getReleaseDate() {
+        return releaseDate;
+    }
+    public void setReleaseDate(LocalDate releaseDate) {
+        this.releaseDate = releaseDate;
+    }   
 }

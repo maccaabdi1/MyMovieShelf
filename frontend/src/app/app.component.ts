@@ -1,12 +1,27 @@
 import { Component, OnInit } from '@angular/core';
 import { MovieService } from './service/movie-service';
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
+import { provideHttpClient } from '@angular/common/http';
+
+import { AddMovieComponent } from './add-movie/add-movie.component';
+import { MovieShelfComponent } from './movie-shelf/movie-shelf.component';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  standalone: true
-  
+  standalone: true,
+  imports: [
+    CommonModule,
+    AddMovieComponent,
+    MovieShelfComponent
+  ],
+  providers: [
+    MovieService,
+ 
+  ]
 })
 export class AppComponent implements OnInit {
   movies: any[] = [];

@@ -1,0 +1,31 @@
+<form (ngSubmit)="addMovie()">
+    <mat-form-field>
+      <mat-label>Title</mat-label>
+      <input matInput [(ngModel)]="movie.title" name="title" required />
+    </mat-form-field>
+  
+    <mat-form-field>
+      <mat-label>Genre</mat-label>
+      <input matInput [(ngModel)]="movie.genre" name="genre" required />
+    </mat-form-field>
+  
+    <mat-form-field>
+      <mat-label>Image URL</mat-label>
+      <input matInput [(ngModel)]="movie.image" name="image" required />
+    </mat-form-field>
+  
+    <mat-form-field>
+      <mat-label>Rating</mat-label>
+      <mat-select [(ngModel)]="movie.rating" name="rating">
+        <mat-option *ngFor="let star of [1, 2, 3, 4, 5]" [value]="star">{{ star }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  
+    <mat-form-field>
+      <mat-label>Description</mat-label>
+      <textarea matInput [(ngModel)]="movie.description" name="description"></textarea>
+    </mat-form-field>
+  
+    <button mat-raised-button color="primary" type="submit">Add Movie</button>
+  </form>
+  

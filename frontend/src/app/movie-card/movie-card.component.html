@@ -1,0 +1,15 @@
+<mat-card class="movie-card">
+    <img mat-card-image [src]="movie.image" alt="{{ movie.title }}" />
+    <mat-card-subtitle>
+      <h2>{{ movie.title }}</h2>
+      <p>{{ movie.genre }}</p>
+    </mat-card-subtitle>
+    <mat-card-content>
+      <mat-icon *ngIf="movie.rating >= 1">star</mat-icon>
+      <mat-icon *ngIf="movie.rating >= 2">star</mat-icon>
+      <mat-icon *ngIf="movie.rating >= 3">star</mat-icon>
+      <mat-icon *ngIf="movie.rating >= 4">star</mat-icon>
+      <mat-icon *ngIf="movie.rating >= 5">star</mat-icon>
+      <p>{{ movie.description }}</p>
+    </mat-card-content>
+</mat-card>
