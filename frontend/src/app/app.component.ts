@@ -7,6 +7,7 @@ import { provideHttpClient } from '@angular/common/http';
 
 import { AddMovieComponent } from './add-movie/add-movie.component';
 import { MovieShelfComponent } from './movie-shelf/movie-shelf.component';
+import { MatToolbar, MatToolbarModule } from '@angular/material/toolbar';
 
 @Component({
   selector: 'app-root',
@@ -16,7 +17,8 @@ import { MovieShelfComponent } from './movie-shelf/movie-shelf.component';
   imports: [
     CommonModule,
     AddMovieComponent,
-    MovieShelfComponent
+    MovieShelfComponent,
+    MatToolbarModule,
   ],
   providers: [
     MovieService,

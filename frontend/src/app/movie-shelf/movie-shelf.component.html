@@ -1,4 +1,32 @@
-<div class="movie-shelf">
-    <app-movie-card *ngFor="let movie of movies" [movie]="movie"></app-movie-card>
+<div class="movie-container">
+
+  <button
+    mat-raised-button
+    color="primary"
+    class="add-button"
+    (click)="openAddMovieDialog()"
+  >
+    Add Movie
+  </button>
+
+
+  <div class="movie-grid">
+    <app-movie-card
+      *ngFor="let movie of movies"
+      [movie]="movie"
+      class="movie-card"
+    ></app-movie-card>
   </div>
-  
+
+  <!-- src/app/movie-shelf/movie-shelf.component.html -->
+<div class="movie-shelf">
+  <app-movie-card
+    *ngFor="let movie of movies"
+    [movie]="movie"
+    (movieEdited)="onMovieEdited($event)"
+    (movieDeleted)="onMovieDeleted($event)"
+  ></app-movie-card>
+
+</div>
+
+</div>

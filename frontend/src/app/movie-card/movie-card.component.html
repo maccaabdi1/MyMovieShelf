@@ -1,15 +1,24 @@
 <mat-card class="movie-card">
-    <img mat-card-image [src]="movie.image" alt="{{ movie.title }}" />
-    <mat-card-subtitle>
-      <h2>{{ movie.title }}</h2>
-      <p>{{ movie.genre }}</p>
-    </mat-card-subtitle>
-    <mat-card-content>
-      <mat-icon *ngIf="movie.rating >= 1">star</mat-icon>
-      <mat-icon *ngIf="movie.rating >= 2">star</mat-icon>
-      <mat-icon *ngIf="movie.rating >= 3">star</mat-icon>
-      <mat-icon *ngIf="movie.rating >= 4">star</mat-icon>
-      <mat-icon *ngIf="movie.rating >= 5">star</mat-icon>
-      <p>{{ movie.description }}</p>
-    </mat-card-content>
+  <mat-card-header>
+    <mat-card-title>{{ movie.title }}</mat-card-title>
+    <mat-card-subtitle>{{ movie.genre }}</mat-card-subtitle>
+  </mat-card-header>
+
+  <mat-card-content>
+    <p><strong>Release Date:</strong> {{ movie.releaseDate }}</p>
+    <p><strong>Description:</strong> {{ movie.description }}</p>
+    <p>
+      <strong>Rating:</strong> {{ movie.rating }} Star{{ movie.rating > 1 ? 's' : '' }}
+    </p>
+  </mat-card-content>
+
+  <mat-card-actions>
+    <button mat-icon-button (click)="editMovie()">
+      <mat-icon>edit</mat-icon>
+    </button>
+    <button mat-icon-button (click)="deleteMovie()">
+      <mat-icon>delete</mat-icon>
+    </button>
+  </mat-card-actions>
 </mat-card>
+
