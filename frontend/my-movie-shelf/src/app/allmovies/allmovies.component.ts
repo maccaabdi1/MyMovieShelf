@@ -6,6 +6,6 @@ import { Component } from '@angular/core';
   templateUrl: './allmovies.component.html',
   styleUrl: './allmovies.component.css'
 })
-export class AllmoviesComponent {
+export class AllMoviesComponent {
 
 }

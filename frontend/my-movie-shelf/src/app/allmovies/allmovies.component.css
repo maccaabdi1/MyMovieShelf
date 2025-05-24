@@ -1,3 +1,81 @@
-.h1{
-    color: brown;
+.all-movie-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;  
+    
+}
+
+.h1 {
+    color: #c18897;
+    align-self: flex-start;
+    margin-left: 320px;
+    
+     
+}
+
+table {
+    align-self: flex-start;
+    margin-left: 360px;
+    background: #fde0df; /* light wood color */
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    overflow: hidden;
+    border-collapse: separate;
+    border-spacing: 0;
+    min-width: 1140px;
+   
+    
+    
+     
+}
+ th, td {
+    border: none;
+    padding: 16px 64px;
+    text-align: left;
+    background: rgba(255,255,255,0.7); 
+}
+th{
+    background: #fde0df; /* darker wood for header */
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.1em;
+    letter-spacing: 1px;
+
+}
+tr:last-child {
+    border-bottom: none;
+}
+tr{
+     border-bottom: 8px solid #fde0df
+}
+.add-movie-button-container{
+    display: flex;
+    margin-top: 20px;
+    align-self: flex-start;
+    margin-left: 320px;
+
+
+
+}
+.add-movie-button {
+    background-color: #fde0df;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.18);
+    border: none;
+    border-radius: 8px;
+    transition: box-shadow 0.2s;
+    width: 35px;      /* Set button width */
+    height: 35px;     /* Set button height */
+    padding: 0;       /* Remove extra padding */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.add-movie-button:hover {
+    box-shadow: 0 8px 24px rgba(0,0,0,0.22); /* Stronger shadow on hover */
+}
+
+.add-movie-button img {
+    width: 30px;      /* Make the icon smaller */
+    height: 30px;
 }

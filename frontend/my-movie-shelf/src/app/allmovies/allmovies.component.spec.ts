@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AllmoviesComponent } from './allmovies.component';
+import { AllMoviesComponent } from './allmovies.component';
 
-describe('AllmoviesComponent', () => {
-  let component: AllmoviesComponent;
-  let fixture: ComponentFixture<AllmoviesComponent>;
+describe('AllMoviesComponent', () => {
+  let component: AllMoviesComponent;
+  let fixture: ComponentFixture<AllMoviesComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AllmoviesComponent]
+      imports: [AllMoviesComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(AllmoviesComponent);
+    fixture = TestBed.createComponent(AllMoviesComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

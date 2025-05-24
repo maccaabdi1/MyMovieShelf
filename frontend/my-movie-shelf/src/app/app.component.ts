@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { SidebarComponent } from './sidebar/sidebar.component';
-import { AllmoviesComponent } from './allmovies/allmovies.component';
+import { AllMoviesComponent } from './allmovies/allmovies.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, SidebarComponent, AllmoviesComponent],
+  imports: [RouterOutlet, SidebarComponent, AllMoviesComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
