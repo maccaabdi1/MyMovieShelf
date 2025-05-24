@@ -2,6 +2,8 @@ package com.example.Movie.model;
 import java.time.LocalDate;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -30,7 +32,7 @@ public class Movie {
     @NotEmpty(message = "Title is required")
     private String title;
     
-
+    private LocalDate watchDate;
     
     private String genre;
 
@@ -40,7 +42,10 @@ public class Movie {
     private int rating;
     
     @Column(length = 1000)
-    private String thoughts;
+    private String notes;
+
+    @Enumerated(EnumType.STRING)
+    private MovieStatus status;
 
 
     public Long getId() {
@@ -75,12 +80,12 @@ public class Movie {
         this.rating = rating;
     }
 
-    public String getThoughts() {
-        return thoughts;
+    public String getNotes() {
+        return notes;
     }
 
-    public void setThoughts(String thoughts) {
-        this.thoughts = thoughts;
+    public void setNotes(String notes) {
+        this.notes = notes;
     }
     public LocalDate getReleaseDate() {
         return releaseDate;
@@ -88,4 +93,10 @@ public class Movie {
     public void setReleaseDate(LocalDate releaseDate) {
         this.releaseDate = releaseDate;
     }   
+    public MovieStatus getStatus() {
+        return status;
+    }
+    public LocalDate getWatchDate() {
+        return watchDate;
+    }
 }
