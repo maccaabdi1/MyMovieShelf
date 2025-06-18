@@ -40,14 +40,26 @@ th{
     font-weight: bold;
     font-size: 1.1em;
     letter-spacing: 1px;
+    border-right: 2px solid white;
+}
+th:last-child {
+    border-right: none;
+}
+td {
+    border-right: 2px solid white;
+    
+}
 
+td:last-child {
+    border-right: none;
 }
 tr:last-child {
     border-bottom: none;
 }
-tr{
-     border-bottom: 8px solid #fde0df
+tr {
+    border-bottom: 2px solid white; /* White horizontal line after every row */
 }
+
 .add-movie-button-container{
     display: flex;
     margin-top: 20px;
