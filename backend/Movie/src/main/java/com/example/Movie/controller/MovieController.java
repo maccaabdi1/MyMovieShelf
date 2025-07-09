@@ -58,19 +58,18 @@ public class MovieController {
         );
         
     }
-    @PostMapping("/create")
-    public ResponseEntity<Response> createMovie(@RequestBody Movie movie) {
-        movieServiceImp.createMovie(movie);
-        return ResponseEntity.ok(
-            Response.builder()
-                .message("Movie Created successfully")
-                .status(HttpStatus.CREATED)
-                .timestamp(LocalDateTime.now())
-                .data(Map.of("movie", movie))
-                .build()
-        );
-        
-    }
+@PostMapping("/create")
+public ResponseEntity<Response> createMovie(@RequestBody Movie movie) {
+    Movie savedMovie = movieServiceImp.createMovie(movie); // Save and get the movie with id
+    return ResponseEntity.ok(
+        Response.builder()
+            .message("Movie Created successfully")
+            .status(HttpStatus.CREATED)
+            .timestamp(LocalDateTime.now())
+            .data(Map.of("movie", savedMovie)) // Return the saved movie with id
+            .build()
+    );
+}
     @PutMapping("/update")
     public ResponseEntity<Response> updateMovie(@RequestBody @Valid Movie movie) {
         movieServiceImp.updateMovie(movie);
@@ -84,19 +83,18 @@ public class MovieController {
         );
         
     }
-    @DeleteMapping("/delete/{id}")
-    public ResponseEntity<Response> deleteMovie(@PathVariable("id") Long id) {
-        movieServiceImp.deleteMovie(id);
-        return ResponseEntity.ok(
-            Response.builder()
-                .message("Movie Deleted successfully")
-                .status(HttpStatus.OK)
-                .timestamp(LocalDateTime.now())
-                .data(Map.of("movie", movieServiceImp.deleteMovie(id)))
-                .build()
-        );
-        
-    }
+ @DeleteMapping("/delete/{id}")
+public ResponseEntity<Response> deleteMovie(@PathVariable("id") Long id) {
+    boolean deleted = movieServiceImp.deleteMovie(id);
+    return ResponseEntity.ok(
+        Response.builder()
+            .message("Movie Deleted successfully")
+            .status(HttpStatus.OK)
+            .timestamp(LocalDateTime.now())
+            .data(Map.of("deleted", deleted))
+            .build()
+    );
+}
 
 
 }
