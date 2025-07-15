@@ -1,0 +1,38 @@
+<div class="container">
+
+  <div class="logo">
+  <img src="assets/logo.png" alt="My Movie Shelf Logo" />
+</div>
+
+
+ 
+  <form (ngSubmit)="addMovie()" #movieForm="ngForm">
+    <input type="text" name="title" [(ngModel)]="newMovie.title" placeholder="Title" required />
+    <input type="text" name="genre" [(ngModel)]="newMovie.genre" placeholder="Genre" required />
+    <input type="number" name="rating" [(ngModel)]="newMovie.rating" placeholder="Rating (1-5)" required min="1" max="5" />
+    <textarea name="notes" [(ngModel)]="newMovie.notes" placeholder="Notes (optional)"></textarea>
+    <button type="submit">➕ Add Movie</button>
+  </form>
+
+  <div class="movie-list">
+    <div *ngFor="let movie of movies" class="movie-card">
+      <h3>{{ movie.title }} ⭐{{ movie.rating }}</h3>
+      <p><strong>Genre:</strong> {{ movie.genre }}</p>
+      <p *ngIf="movie.notes"><em>{{ movie.notes }}</em></p>
+      <button (click)="editMovie(movie)">✏️ Edit</button>
+      <button (click)="deleteMovie(movie.id!)">🗑 Delete</button>
+    </div>
+  </div>
+
+
+  <div class="update-container" *ngIf="selectedMovie">
+    <h3>✏️ Update Movie</h3>
+    <form (ngSubmit)="updateMovie()" #updateForm="ngForm">
+      <input type="text" name="title" [(ngModel)]="selectedMovie.title" placeholder="Title" required />
+      <input type="text" name="genre" [(ngModel)]="selectedMovie.genre" placeholder="Genre" required />
+      <input type="number" name="rating" [(ngModel)]="selectedMovie.rating" min="1" max="5" placeholder="Rating" required />
+      <textarea name="notes" [(ngModel)]="selectedMovie.notes" placeholder="Notes"></textarea>
+      <button type="submit">💾 Save Changes</button>
+    </form>
+  </div>
+</div>
