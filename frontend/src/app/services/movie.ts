@@ -6,7 +6,7 @@ export interface Movie {
   id?: number;
   title: string;
   watchDate?: string;
-  genre: string;
+  genre: string[];
   releaseDate?: string;
   rating: number;
   notes?: string;

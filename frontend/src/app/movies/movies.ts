@@ -9,11 +9,16 @@ import { CommonModule } from '@angular/common';
   imports: [CommonModule, FormsModule],
   styleUrls: ['./movies.css']
 })
+
 export class MoviesComponent implements OnInit {
   movies: Movie[] = [];
+  genres: string[] = [
+  'Action', 'Comedy', 'Drama', 'Horror', 'Sci-Fi',
+  'Romance', 'Thriller', 'Documentary', 'Animation'
+];
   newMovie: Movie = {
     title: '',
-    genre: '',
+    genre: [],
     rating: 1,
     status: 'COMPLETED',
     notes: ''
@@ -34,7 +39,7 @@ export class MoviesComponent implements OnInit {
   addMovie() {
     this.movieService.addMovie(this.newMovie).subscribe(() => {
       this.loadMovies();
-      this.newMovie = { title: '', genre: '', rating: 1, status: 'COMPLETED',notes: ' ' };
+      this.newMovie = { title: '', genre: [], rating: 1, status: 'COMPLETED',notes: ' ' };
     });
   }
 
@@ -47,7 +52,7 @@ export class MoviesComponent implements OnInit {
 
 editMovie(movie: Movie) {
   // Clone the movie to avoid direct binding
-  this.selectedMovie = { ...movie };
+  this.selectedMovie = { ...movie, genre: [...movie.genre] };
 }
 
 updateMovie() {

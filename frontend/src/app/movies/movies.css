@@ -7,6 +7,13 @@
   box-shadow: 0 5px 15px rgba(165, 118, 142, 0.2);
   font-family: 'Segoe UI', sans-serif;
 }
+ .logo
+  {
+    display: flex;
+    justify-content: center;
+    margin-button: 1rem;
+    margin-left: 16px;
+  }
 
 h2 {
   color: #7d4c5f;
@@ -40,6 +47,21 @@ form {
     }
   }
 }
+select {
+  padding: 0.5rem;
+  border-radius: 8px;
+  border: 1px solid #d9c1cd;
+  font-size: 1rem;
+  background-color: #fffafc;
+  color: #5c2d3b;
+}
+
+select:focus {
+  outline: none;
+  border-color: #c48ba3;
+  box-shadow: 0 0 0 2px rgba(196, 139, 163, 0.3);
+}
+
 
 .movie-list {
   display: flex;
@@ -124,15 +146,7 @@ form {
       }
     }
   }
-  .logo {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 1rem;
+ 
 
-  img {
-    max-width: 150px;
-    height: auto;
-  }
-}
 
 }
