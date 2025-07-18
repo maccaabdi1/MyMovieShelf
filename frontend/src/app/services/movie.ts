@@ -29,11 +29,11 @@ export class MovieService {
     return this.http.get(`${this.baseUrl}/get/${id}`);
   }
 
-  addMovie(movie: Movie): Observable<any> {
+  addMovie(movie: any): Observable<any> {
     return this.http.post(`${this.baseUrl}/create`, movie);
   }
 
-  updateMovie(movie: Movie): Observable<any> {
+  updateMovie(movie: any): Observable<any> {
     return this.http.put(`${this.baseUrl}/update`, movie);
   }
 
