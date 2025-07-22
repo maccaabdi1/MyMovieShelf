@@ -21,6 +21,12 @@
   placeholder="Select genres"
   required
 ></ng-select>
+<select name="status" [(ngModel)]="newMovie.status" required>
+  <option value="WANT_TO_WATCH">Want to Watch</option>
+  <option value="WATCHING">Watching</option>
+  <option value="COMPLETED">Completed</option>
+  <option value="DROPPED">Dropped</option>
+</select>
 
     <input type="number" name="rating" [(ngModel)]="newMovie.rating" placeholder="Rating (1-5)" required min="1" max="5" />
     <textarea name="notes" [(ngModel)]="newMovie.notes" placeholder="Notes (optional)"></textarea>
@@ -57,6 +63,12 @@
   placeholder="Select genres"
   required
 ></ng-select>
+<select name="status" [(ngModel)]="newMovie.status" required>
+  <option value="WANT_TO_WATCH">Want to Watch</option>
+  <option value="WATCHING">Watching</option>
+  <option value="COMPLETED">Completed</option>
+  <option value="DROPPED">Dropped</option>
+</select>
 
 
     <input type="number" name="rating" [(ngModel)]="selectedMovie.rating" min="1" max="5" placeholder="Rating" required />

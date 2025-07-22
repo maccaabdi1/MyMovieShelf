@@ -1,0 +1,28 @@
+.board {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.column {
+  background: #1c1c1c;
+  padding: 1rem;
+  border-radius: 10px;
+  width: 220px;
+  min-height: 200px;
+  color: #fff;
+}
+
+.card {
+  background: #333;
+  padding: 0.75rem;
+  border-radius: 6px;
+  margin-top: 0.5rem;
+  font-weight: bold;
+}
+
+.want { border-top: 4px solid gold; }
+.watching { border-top: 4px solid #007bff; }
+.completed { border-top: 4px solid #28a745; }
+.dropped { border-top: 4px solid #dc3545; }
