@@ -2,6 +2,12 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
+export enum MovieStatus {
+  WANT_TO_WATCH = 'WANT_TO_WATCH',
+  WATCHING = 'WATCHING',
+  COMPLETED = 'COMPLETED',
+  DROPPED = 'DROPPED'
+}
 export interface Movie {
   id?: number;
   title: string;
@@ -10,7 +16,7 @@ export interface Movie {
   releaseDate?: string;
   rating: number;
   notes?: string;
-  status: string;
+  status: MovieStatus;
 }
 
 @Injectable({

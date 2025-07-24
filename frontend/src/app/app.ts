@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterModule, RouterOutlet } from '@angular/router';
 import { MoviesComponent } from './movies/movies';
 import { HttpClientModule } from '@angular/common/http'; // <-- Add this
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, MoviesComponent], // <-- Add here
+  imports: [RouterOutlet, MoviesComponent,RouterModule], // <-- Add here
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

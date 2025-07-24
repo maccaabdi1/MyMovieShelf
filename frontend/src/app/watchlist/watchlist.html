@@ -1,27 +1,27 @@
 <div class="board">
   <div class="column want">
-    <h3>🟡 Want to Watch</h3>
+    <h3> Want to Watch</h3>
     <div *ngFor="let movie of getByStatus('WANT_TO_WATCH')" class="card">
       {{ movie.title }}
     </div>
   </div>
 
   <div class="column watching">
-    <h3>🔵 Watching</h3>
+    <h3> Watching</h3>
     <div *ngFor="let movie of getByStatus('WATCHING')" class="card">
       {{ movie.title }}
     </div>
   </div>
 
   <div class="column completed">
-    <h3>✅ Completed</h3>
+    <h3> Completed</h3>
     <div *ngFor="let movie of getByStatus('COMPLETED')" class="card">
       {{ movie.title }}
     </div>
   </div>
 
   <div class="column dropped">
-    <h3>🔴 Dropped</h3>
+    <h3> Dropped</h3>
     <div *ngFor="let movie of getByStatus('DROPPED')" class="card">
       {{ movie.title }}
     </div>

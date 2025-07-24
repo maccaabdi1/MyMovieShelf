@@ -1,5 +1,4 @@
 <div class="container">
-
   <div class="logo">
     <img src="assets/logo.png" alt="My Movie Shelf Logo" />
   </div>
@@ -8,25 +7,32 @@
   <form (ngSubmit)="addMovie()" #movieForm="ngForm">
     <input type="text" name="title" [(ngModel)]="newMovie.title" placeholder="Title" required />
 
-    <!-- Fixed model binding -->
- <ng-select
+    <!-- Genre Dropdown -->
+    <ng-select
+      class="custom-ng-select"
+      [items]="genres"
+      [(ngModel)]="newMovie.genre"
+      name="genre"
+      [multiple]="true"
+      [closeOnSelect]="false"
+      [clearable]="false"
+      [ngClass]="{ 'has-values': newMovie.genre && newMovie.genre.length > 0 }"
+      placeholder="Select genres"
+      required>
+    </ng-select>
+
+    <!-- Status Dropdown -->
+   <ng-select
   class="custom-ng-select"
-  [items]="genres"
-  [(ngModel)]="newMovie.genre"
-  name="genre"
-  [multiple]="true"
-  [closeOnSelect]="false"
+  [items]="statuses"
+  [(ngModel)]="newMovie.status"
+  name="status"
   [clearable]="false"
-  [ngClass]="{ 'has-values': newMovie.genre && newMovie.genre.length > 0 }"
-  placeholder="Select genres"
+  [ngClass]="{ 'has-values': newMovie.status }"
+  placeholder="Select status"
   required
 ></ng-select>
-<select name="status" [(ngModel)]="newMovie.status" required>
-  <option value="WANT_TO_WATCH">Want to Watch</option>
-  <option value="WATCHING">Watching</option>
-  <option value="COMPLETED">Completed</option>
-  <option value="DROPPED">Dropped</option>
-</select>
+
 
     <input type="number" name="rating" [(ngModel)]="newMovie.rating" placeholder="Rating (1-5)" required min="1" max="5" />
     <textarea name="notes" [(ngModel)]="newMovie.notes" placeholder="Notes (optional)"></textarea>
@@ -38,6 +44,7 @@
     <div *ngFor="let movie of movies" class="movie-card">
       <h3>{{ movie.title }} ⭐{{ movie.rating }}</h3>
       <p><strong>Genres:</strong> {{ movie.genre.join(', ') }}</p>
+      <p><strong>Status:</strong> {{ movie.status }}</p>
       <p *ngIf="movie.notes"><em>{{ movie.notes }}</em></p>
       <button (click)="editMovie(movie)">✏️ Edit</button>
       <button (click)="deleteMovie(movie.id!)">🗑 Delete</button>
@@ -45,36 +52,41 @@
   </div>
 
   <!-- Update Movie Form -->
-<!-- Update Movie Form -->
-<div class="update-container" *ngIf="selectedMovie">
-  <h3>✏️ Update Movie</h3>
-  <form (ngSubmit)="updateMovie()" #updateForm="ngForm">
-    <input type="text" name="title" [(ngModel)]="selectedMovie.title" placeholder="Title" required />
+  <div class="update-container" *ngIf="selectedMovie">
+    <h3>✏️ Update Movie</h3>
+    <form (ngSubmit)="updateMovie()" #updateForm="ngForm">
+      <input type="text" name="title" [(ngModel)]="selectedMovie.title" placeholder="Title" required />
 
-  <ng-select
+      <!-- Genre Update Dropdown -->
+      <ng-select
+        class="custom-ng-select"
+        [items]="genres"
+        [(ngModel)]="selectedMovie.genre"
+        name="genre"
+        [multiple]="true"
+        [closeOnSelect]="false"
+        [clearable]="false"
+        [ngClass]="{ 'has-values': selectedMovie.genre && selectedMovie.genre.length > 0 }"
+        placeholder="Select genres"
+        required>
+      </ng-select>
+
+      <!-- Status Update Dropdown -->
+      <ng-select
   class="custom-ng-select"
-  [items]="genres"
-   [(ngModel)]="selectedMovie.genre"
-  name="genre"
-  [multiple]="true"
-  [closeOnSelect]="false"
+  [items]="statuses"
+  [(ngModel)]="selectedMovie.status"
+  name="status"
   [clearable]="false"
-  [ngClass]="{ 'has-values': newMovie.genre && newMovie.genre.length > 0 }"
-  placeholder="Select genres"
+  [ngClass]="{ 'has-values': newMovie.status }"
+  placeholder="Select status"
   required
 ></ng-select>
-<select name="status" [(ngModel)]="newMovie.status" required>
-  <option value="WANT_TO_WATCH">Want to Watch</option>
-  <option value="WATCHING">Watching</option>
-  <option value="COMPLETED">Completed</option>
-  <option value="DROPPED">Dropped</option>
-</select>
 
 
-    <input type="number" name="rating" [(ngModel)]="selectedMovie.rating" min="1" max="5" placeholder="Rating" required />
-    <textarea name="notes" [(ngModel)]="selectedMovie.notes" placeholder="Notes"></textarea>
-    <button type="submit">💾 Save Changes</button>
-  </form>
-</div>
-
+      <input type="number" name="rating" [(ngModel)]="selectedMovie.rating" min="1" max="5" placeholder="Rating" required />
+      <textarea name="notes" [(ngModel)]="selectedMovie.notes" placeholder="Notes"></textarea>
+      <button type="submit">💾 Save Changes</button>
+    </form>
+  </div>
 </div>

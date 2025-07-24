@@ -105,9 +105,21 @@ select:focus {
   background-color: #f4d1dc;
   color: #4a1e2c;
 }
-::ng-deep .custom-ng-select.has-values .ng-placeholder {
-  display: none !important;
+::ng-deep .custom-ng-select .ng-placeholder {
+  color: #a5879d; /* softer pink */
+  font-style: italic;
+  padding-left: 0.25rem;
+  transition: opacity 0.2s ease;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
 }
+
+::ng-deep .custom-ng-select.has-values .ng-placeholder {
+  opacity: 0;
+  visibility: hidden;
+}
+
 ::ng-deep .custom-ng-select .ng-value {
   font-size: 0.85rem;
   padding: 0.25rem 0.6rem;

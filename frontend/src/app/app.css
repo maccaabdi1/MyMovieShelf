@@ -1,21 +1,45 @@
 .navbar {
   display: flex;
   justify-content: center;
-  gap: 1rem;
-  background: #2c2c2c;
-  padding: 1rem;
+  background-color: #fbe9f0;
+  padding: 1rem 0;
   border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(180, 130, 150, 0.2);
   margin-bottom: 2rem;
+  gap: 1.5rem;
+  font-family: 'Segoe UI', sans-serif;
 }
 
 .navbar a {
-  color: #ffffff;
   text-decoration: none;
+  color: #7d4c5f;
   font-weight: bold;
-  padding: 0.4rem 0.8rem;
-  border-radius: 6px;
+  font-size: 1rem;
+  background-color: #fcd6e2;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  transition: all 0.3s ease;
 }
 
-.navbar a:hover {
-  background-color: #444;
+.navbar a:hover,
+.navbar a.active,
+.navbar a.router-link-active {
+  background-color: #e0b7c9;
+  color: #4a1e2c;
 }
+
+/* Route Transition Animation */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 0.4s;
+  animation-timing-function: ease;
+}
+
+::view-transition-old(root) {
+  animation-name: fadeOut;
+}
+
+::view-transition-new(root) {
+  animation-name: fadeIn;
+}
+

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MovieService, Movie } from '../services/movie';
+import { MovieService, Movie, MovieStatus } from '../services/movie';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { NgSelectModule } from '@ng-select/ng-select';
@@ -17,11 +17,13 @@ export class MoviesComponent implements OnInit {
   'Action', 'Comedy', 'Drama', 'Horror', 'Sci-Fi',
   'Romance', 'Thriller', 'Documentary', 'Animation'
 ];
+  statuses = [
+    'WANT_TO_WATCH','WATCHING', 'COMPLETED', 'DROPPED']
   newMovie: Movie = {
     title: '',
     genre: [],
     rating: 1,
-    status: 'COMPLETED',
+    status: MovieStatus.COMPLETED, // <-- set a valid default
     notes: ''
   };
 
@@ -41,8 +43,14 @@ loadMovies() {
 }
 
 
-
+getByStatus(status: string): Movie[] {
+  return this.movies.filter(movie => movie.status === status);
+}
 addMovie() {
+  if (!this.statuses.includes(this.newMovie.status)) {
+    alert('Please select a valid status.');
+    return;
+  }
   const movieToSend = {
     ...this.newMovie,
     genre: this.newMovie.genre.join(', ') // ✅ convert array to string
@@ -54,7 +62,8 @@ addMovie() {
       title: '',
       genre: [],
       rating: 1,
-      status: 'COMPLETED',
+      status: MovieStatus
+      .COMPLETED, // <-- reset to a valid default
       notes: ''
     };
   });
@@ -73,6 +82,10 @@ editMovie(movie: Movie) {
 }
 
 updateMovie() {
+  if (!this.selectedMovie || !this.statuses.includes(this.selectedMovie.status)) {
+    alert('Please select a valid status.');
+    return;
+  }
   if (!this.selectedMovie) return;
 
   const updatedMovie = {

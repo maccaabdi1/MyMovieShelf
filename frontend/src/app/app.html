@@ -1,7 +1,9 @@
-<app-movies></app-movies>
+
 <nav class="navbar">
-  <a routerLink="/">🎬 All Movies</a>
-  <a routerLink="/watchlist">📋 Watchlist</a>
-  <a routerLink="/calendar">🗓️ Movie Calendar</a>
+  <a routerLink="/" routerLinkActive="active">All Movies</a>
+  <a routerLink="/watchlist" routerLinkActive="active">Watchlist</a>
+  <a routerLink="/calendar" routerLinkActive="active"> Movie Calendar</a>
 </nav>
+
+<!-- This is where routed components will load -->
 <router-outlet></router-outlet>

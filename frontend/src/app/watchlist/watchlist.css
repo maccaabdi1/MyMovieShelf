@@ -3,26 +3,58 @@
   gap: 1rem;
   justify-content: center;
   flex-wrap: wrap;
+  margin-top: 2rem;
 }
 
 .column {
-  background: #1c1c1c;
+  background: #f3edf7; /* Softer lavender for visibility */
   padding: 1rem;
-  border-radius: 10px;
-  width: 220px;
-  min-height: 200px;
-  color: #fff;
+  border-radius: 16px;
+  width: 240px;
+  min-height: 250px;
+  color: #4a1e2c;
+  box-shadow: 0 4px 10px rgba(150, 100, 160, 0.1);
+  font-family: 'Segoe UI', sans-serif;
+  border: 1px solid #e2d3ea;
+}
+
+.column h3 {
+  margin-bottom: 1rem;
+  text-align: center;
+  color: #7d4c5f;
+  font-size: 1.2rem;
 }
 
 .card {
-  background: #333;
+  background: #f9f4fb; /* Light but distinct card */
   padding: 0.75rem;
-  border-radius: 6px;
+  border-radius: 12px;
   margin-top: 0.5rem;
   font-weight: bold;
+  font-size: 0.95rem;
+  box-shadow: 0 2px 5px rgba(170, 120, 190, 0.1);
+  border-left: 4px solid #cba6d1;
+  transition: transform 0.2s ease;
+  color: #5c2d3b;
 }
 
-.want { border-top: 4px solid gold; }
-.watching { border-top: 4px solid #007bff; }
-.completed { border-top: 4px solid #28a745; }
-.dropped { border-top: 4px solid #dc3545; }
+.card:hover {
+  transform: translateY(-2px);
+}
+
+/* Softer, more visible pastel status indicators */
+.want {
+  border-left-color: #f6c849;   /* warm gold */
+}
+
+.watching {
+  border-left-color: #ba8fb9;   /* dusty lavender */
+}
+
+.completed {
+  border-left-color: #9ad1a5;   /* soft green */
+}
+
+.dropped {
+  border-left-color: #f4a2b8;   /* gentle rose */
+}

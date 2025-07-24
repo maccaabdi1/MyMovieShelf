@@ -1,11 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, NgModule, OnInit } from '@angular/core';
 import { MovieService, Movie } from '../services/movie';
+import { CommonModule } from '@angular/common';
+
 
 @Component({
   selector: 'app-watchlist',
   templateUrl: './watchlist.html',
-  styleUrls: ['./watchlist.css']
+  styleUrls: ['./watchlist.css'],
+  imports: [CommonModule]
 })
+
 export class WatchlistComponent implements OnInit {
   movies: Movie[] = [];
 
