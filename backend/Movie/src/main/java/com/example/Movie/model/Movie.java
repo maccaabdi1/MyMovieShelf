@@ -99,4 +99,9 @@ public class Movie {
     public LocalDate getWatchDate() {
         return watchDate;
     }
+    public void setStatus(MovieStatus status) {
+
+        this.status = status;
+
+    }
 }
