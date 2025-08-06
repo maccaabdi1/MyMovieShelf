@@ -1,0 +1,40 @@
+<div class="calendar-wrapper">
+  <div class="calendar-header">
+    <button (click)="prevMonth()">⬅</button>
+    <h2>{{ currentMonthName }} {{ currentYear }}</h2>
+    <button (click)="nextMonth()">➡</button>
+  </div>
+
+  <div class="calendar-grid">
+    <div class="day-name" *ngFor="let day of weekDays">{{ day }}</div>
+
+    <div
+      class="calendar-day"
+      *ngFor="let day of calendarDays"
+      [class.other-month]="!day.inCurrentMonth"
+      [class.today]="isToday(day.date)"
+    >
+      <div class="date-number">{{ day.date.getDate() }}</div>
+      
+    <div class="event" *ngFor="let event of getEventsForDate(day.date)">
+  <div class="event-content">
+    <span>🎬 {{ event.movieTitle }}</span>
+    <button class="delete" (click)="deleteEvent(event.id!)">
+      <img src="assets/delete.png" alt="Delete" class="trash-icon" />
+    </button>
+  </div>
+</div>
+
+      <button class="add" (click)="openModal(day.date)">➕</button>
+    </div>
+  </div>
+
+  <!-- Add Movie Modal -->
+  <div *ngIf="selectedDate" class="modal">
+    <h3>Add Movie on {{ selectedDate | date:'MMM d, y' }}</h3>
+    <input type="text" [(ngModel)]="newEvent.movieTitle" placeholder="Movie Title" />
+    <input type="text" [(ngModel)]="newEvent.description" placeholder="Optional Description" />
+    <button (click)="addEvent()">Add</button>
+    <button class="close" (click)="closeModal()">Close</button>
+  </div>
+</div>

@@ -23,7 +23,7 @@ export class MoviesComponent implements OnInit {
     title: '',
     genre: [],
     rating: 1,
-    status: MovieStatus.COMPLETED, // <-- set a valid default
+    status: MovieStatus.COMPLETED, 
     notes: ''
   };
 
@@ -53,7 +53,7 @@ addMovie() {
   }
   const movieToSend = {
     ...this.newMovie,
-    genre: this.newMovie.genre.join(', ') // ✅ convert array to string
+    genre: this.newMovie.genre.join(', ') 
   };
 
   this.movieService.addMovie(movieToSend).subscribe(() => {
@@ -63,7 +63,7 @@ addMovie() {
       genre: [],
       rating: 1,
       status: MovieStatus
-      .COMPLETED, // <-- reset to a valid default
+      .COMPLETED, 
       notes: ''
     };
   });

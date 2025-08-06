@@ -1,0 +1,146 @@
+.calendar-wrapper {
+  background-color: #fffafc;
+  color: #5c2d3b;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 0 15px rgba(200, 150, 170, 0.15);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #5c2d3b;
+  margin-bottom: 1rem;
+
+  h2 {
+    font-size: 1.5rem;
+    color: #7d4c5f;
+  }
+
+  button {
+    background: #fcd6e2;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #f4b8c9;
+    }
+  }
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.5rem;
+}
+
+.day-name {
+  text-align: center;
+  font-weight: bold;
+  padding: 0.5rem 0;
+  background-color: #fcecf1;
+  border-radius: 8px;
+}
+
+.calendar-day {
+
+
+  min-height: 100px;
+  background-color: #fdf4f8;
+  border-radius: 12px;
+  padding: 0.5rem;
+  position: relative;
+  overflow-y: auto;
+  border: 1px solid #f4c9da;
+
+  &.other-month {
+    background-color: #f8e7ef;
+    opacity: 0.6;
+
+
+  }
+
+  &.today {
+    border: 2px solid #c58ba4;
+    background-color: #fce6ee;
+  }
+
+  .date-number {
+    font-weight: bold;
+    margin-bottom: 0.25rem;
+  }
+
+  .event {
+    font-size: 0.85rem;
+    background-color: #fcd6e2;
+    padding: 0.3rem;
+    border-radius: 6px;
+    margin: 0.2rem 0;
+
+        .event-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+    .delete {
+      background: none;
+      border: none;
+      color: #b94a6b;
+      margin-left: 0.5rem;
+      cursor: pointer;
+    }
+  }
+
+  .add {
+    position: absolute;
+    bottom: 4px;
+    right: 6px;
+    font-size: 0.8rem;
+    background-color: #d3a7ba;
+    border: none;
+    border-radius: 8px;
+    padding: 0.2rem 0.5rem;
+    color: #fffafc;
+    cursor: pointer;
+  }
+}
+
+.modal {
+  background-color: #fffafc;
+  border: 2px dashed #e8b6c8;
+  padding: 1.5rem;
+  border-radius: 16px;
+  margin-top: 1rem;
+
+  input {
+    display: block;
+    margin-bottom: 1rem;
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #d9c1cd;
+    border-radius: 10px;
+    font-size: 1rem;
+  }
+
+  button {
+    margin-right: 1rem;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 12px;
+    font-weight: bold;
+    background-color: #c58ba4;
+    color: white;
+
+    &.close {
+      background-color: #e6cad6;
+    }
+  }
+  
+
+}

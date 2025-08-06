@@ -8,6 +8,7 @@ export enum MovieStatus {
   COMPLETED = 'COMPLETED',
   DROPPED = 'DROPPED'
 }
+
 export interface Movie {
   id?: number;
   title: string;
