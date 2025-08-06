@@ -10,7 +10,7 @@ import com.example.Movie.model.CalendarEvent;
 
 public interface CalendarRepo extends JpaRepository<CalendarEvent, Long> {
 
-    List<CalendarEvent> findByWatchDateBetween(LocalDate watchDate);
+    List<CalendarEvent> findByWatchDateBetween(LocalDate start, LocalDate end);
 
 
     
